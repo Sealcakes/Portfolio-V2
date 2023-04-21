@@ -1,10 +1,34 @@
 import React from 'react';
 
+const navEl = document.getElementById('landing-nav');
 
-function NavTabs({ currentPage, handlePageChange }) {
+for(const link of navEl.getElementsByTagName('a')) {
+    link.onmousemove = e => {
+        const rect = link.getBoundingClientRect(),
+            img = link.querySelector('img');
+
+        img.style.left = `${e.clientX - rect.left}px`;
+        img.style.top = `${e.clientY - rect.top}px`;
+    }
+}
+
+window.onmousemove = e => {
+    const percent = e.clientY / window.innerHeight,
+        y = percent * navEl.offsetHeight * -1;
+        // Y !== (more than screen height)
+
+    navEl.animate({
+        transform: `translateY(${y}px)`
+    }, {
+        fill: 'forwards',
+        duration: 4000
+    })
+}
+
+function LandingElement({ currentPage, handlePageChange }) {
     return (
-        <nav id='main-nav'>
-            <a href='#' target='_blank'>
+        <nav id='landing-nav'>
+            <a href='#home' onClick={() => handlePageChange('Home')} className={currentPage === 'Home'}>
                 <span>HOME</span>
                 <img src='https://plus.unsplash.com/premium_photo-1679392532113-bee46deab9fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGVzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' />
             </a>
@@ -28,4 +52,4 @@ function NavTabs({ currentPage, handlePageChange }) {
     )
 }
 
-export default NavTabs;
+export default LandingElement;
