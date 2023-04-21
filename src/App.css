@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+#main-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    padding: clamp(1rem, 5vw, 6rem);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#main-nav a {
+    color: rgba(255, 255, 255, 0.25);
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(3rem, 8vw, 10rem);
+    font-weight: 300;
+    text-decoration: none;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#main-nav a:hover {
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#main-nav a span {
+    display: block;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    position: relative;
+    z-index: 2;
 }
 
-.App-link {
-  color: #61dafb;
+#main-nav a:hover span {
+    border-top-color: white;
+    border-bottom-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#main-nav a img {
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: transform 250ms, opacity 250ms;
+    pointer-events: none;
+    width: min(50vw, 800px);
+}
+
+#main-nav a:hover img {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
