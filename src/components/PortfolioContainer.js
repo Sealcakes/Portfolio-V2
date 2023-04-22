@@ -11,9 +11,7 @@ export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('Landing');
 
     const renderPage = () => {
-        if (currentPage === 'Landing') {
-            return <Landing />;
-        }
+        
         if (currentPage === 'Home') {
             return <Home />;
         }
@@ -31,11 +29,14 @@ export default function PortfolioContainer() {
         }
     };
     console.log(currentPage)
-    const handlePageChange = (page) => setCurrentPage(page);
+    const handlePageChange = (page) => {
+        console.log(page);
+        setCurrentPage(page);
+    }
     
     return (
         <div>
-            <Landing currentPage={'Landing'} handlePageChange={handlePageChange} />
+            <Landing currentPage={currentPage} handlePageChange={handlePageChange} />
             {renderPage()}
         </div>
     );
