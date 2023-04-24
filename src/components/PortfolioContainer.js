@@ -4,6 +4,7 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import MainNav from './MainNav';
 import Landing from './pages/Landing';
 
 export default function PortfolioContainer() {
@@ -34,9 +35,16 @@ export default function PortfolioContainer() {
         setCurrentPage(page);
     }
     
+    const pageDisplay = (currentPage) => {
+        if (currentPage === 'Landing') {
+            return <Landing currentPage={currentPage} handlePageChange={handlePageChange} />
+        }
+        return <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
+    }
+
     return (
-        <div>
-            <Landing currentPage={currentPage} handlePageChange={handlePageChange} />
+        <div id='page-container'>
+            {pageDisplay(currentPage)}
             {renderPage()}
         </div>
     );

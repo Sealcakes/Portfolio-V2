@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+}
+
+html {
+    background-color: black;
 }
 
 body {
@@ -10,14 +16,14 @@ body {
 #landing-nav {
     display: flex;
     flex-direction: column;
-    margin: 20vh 5vw;
+    /* margin: 20vh 5vw; */
     background-color: black;
     padding: clamp(1rem, 5vw, 6rem);
 }
 
 #landing-nav a {
     color: rgba(255, 255, 255, 0.25);
-    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: clamp(3rem, 8vw, 10rem);
     font-weight: 300;
     text-decoration: none;
@@ -54,4 +60,9 @@ body {
 #landing-nav a:hover img {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+#page-container {
+    height: 0px;
+    
 }
