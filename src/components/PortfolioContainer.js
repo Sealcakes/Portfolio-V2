@@ -25,21 +25,20 @@ export default function PortfolioContainer() {
         if (currentPage === 'Contact') {
             return <Contact />;
         }
-        if (currentPage === 'Resume') {
-            return <Resume />;
-        }
+        return <Resume />;
+        
     };
-    console.log(currentPage)
+    
     const handlePageChange = (page) => {
         console.log(page);
         setCurrentPage(page);
     }
     
-    const pageDisplay = (currentPage) => {
-        if (currentPage === 'Landing') {
-            return <Landing currentPage={currentPage} handlePageChange={handlePageChange} />
+    const pageDisplay = (page) => {
+        if (page === 'Landing') {
+            return <Landing currentPage={page} handlePageChange={handlePageChange} />
         }
-        return <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
+        return <MainNav currentPage={page} handlePageChange={handlePageChange} />
     }
 
     return (

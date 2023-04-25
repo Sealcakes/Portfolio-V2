@@ -66,3 +66,45 @@ body {
     height: 0px;
     
 }
+
+#main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav img {
+    border-radius: 50%;
+    height: 100px;
+}
+
+#main-nav ul {
+    display: flex;
+}
+
+#main-nav ul li {
+    list-style-type: none;
+}
+
+#main-nav ul li a {
+    position: relative;
+    padding: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+#main-nav ul li a:before {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    height: 0.3rem;
+    width: 0%;
+    background: yellow;
+    transition: all 0.4s ease;
+}
+
+#main-nav ul li a:hover:before {
+    width: 100%;
+}
