@@ -13,7 +13,25 @@ const projects = [
         title: "Test2 Title",
         subtitle: "Another Brief Description",
         description: "Another longer version of the second project's description, it also used a lot of things."
-    }
+    },
+    {
+        id: 3,
+        title: "Test2 Title",
+        subtitle: "Another Brief Description",
+        description: "Another longer version of the second project's description, it also used a lot of things."
+    },
+    {
+        id: 4,
+        title: "Test2 Title",
+        subtitle: "Another Brief Description",
+        description: "Another longer version of the second project's description, it also used a lot of things."
+    },
+    {
+        id: 5,
+        title: "Test2 Title",
+        subtitle: "Another Brief Description",
+        description: "Another longer version of the second project's description, it also used a lot of things."
+    },
 ]
 
 export default function Portfolio() {
@@ -48,6 +66,7 @@ export default function Portfolio() {
                 key={selectedProject.id}
                 className='project-card expanded'
                 layoutId={selectedProject.id}
+                animate={{x: '25%', y: '25%'}}
                 onClick={() => handleCloseProjectCardClick()}
             >
                 <motion.h2>{selectedProject.title}</motion.h2>
