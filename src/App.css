@@ -59,7 +59,7 @@
     height: 0px;
 }
 
-/* Main Navigation CSS */
+/* MainNav.js CSS */
 
 #main-nav {
     background-color: #1a1a1a;
@@ -104,7 +104,7 @@
     width: 100%;
 }
 
-/* Portfolio Page CSS */
+/* projectcards.js CSS */
 
 .project-cards-container {
     display: flex;
@@ -159,4 +159,16 @@
     border-radius: 0.5rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     overflow: auto;
+    cursor: default;
+  }
+
+  /* Portfolio.js CSS */
+
+  .card-close-button {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 40px;
+    rotate: 45deg;
+    cursor: pointer;
   }
