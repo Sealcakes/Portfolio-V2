@@ -13,10 +13,11 @@ body {
     background-color: black;
 }
 
+/* Landing Page CSS */
+
 #landing-nav {
     display: flex;
     flex-direction: column;
-    /* margin: 20vh 5vw; */
     background-color: black;
     padding: clamp(1rem, 5vw, 6rem);
 }
@@ -59,15 +60,17 @@ body {
 
 #landing-nav a:hover img {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(.75);
 }
 
 #page-container {
     height: 0px;
-    
 }
 
+/* Main Navigation CSS */
+
 #main-nav {
+    background-color: #1a1a1a;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,4 +110,13 @@ body {
 
 #main-nav ul li a:hover:before {
     width: 100%;
+}
+
+.PortfolioCardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 500px;
+    background-color: grey;
 }

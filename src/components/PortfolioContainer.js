@@ -43,7 +43,7 @@ export default function PortfolioContainer() {
 
     return (
         <div id='page-container'>
-            {pageDisplay(currentPage)}
+            <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
             {renderPage()}
         </div>
     );
