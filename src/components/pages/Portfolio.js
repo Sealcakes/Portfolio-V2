@@ -1,9 +1,9 @@
 import React from 'react';
-import ProjectCards from './pagecomponents/ProjectCards';
+import ProjectCards from './pagecomponents/projectcards';
 
 export default function Portfolio() {
     return (
-        <div>
+        <div className='portfolio-page-container'>
             <h1 id='portfolio-page-header'>
                 Projects
             </h1>

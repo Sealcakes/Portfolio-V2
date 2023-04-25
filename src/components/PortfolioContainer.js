@@ -9,7 +9,7 @@ import Landing from './pages/Landing';
 
 export default function PortfolioContainer() {
     
-    const [currentPage, setCurrentPage] = useState('Landing');
+    const [currentPage, setCurrentPage] = useState('Home');
 
     const renderPage = () => {
         
@@ -43,7 +43,7 @@ export default function PortfolioContainer() {
 
     return (
         <div id='page-container'>
-            {pageDisplay(currentPage)}
+            <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
             {renderPage()}
         </div>
     );
