@@ -6,6 +6,8 @@ import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import MainNav from './MainNav';
 import Landing from './pages/Landing';
+import { AnimatePresence } from 'framer-motion';
+import background from '../Assets/rainbowsmoke.png';
 
 export default function PortfolioContainer() {
     
@@ -42,9 +44,13 @@ export default function PortfolioContainer() {
     }
 
     return (
-        <div id='page-container'>
-            <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
-        </div>
+        <AnimatePresence>
+            <div style={{backgroundImage: `url(${background})`}}>
+                <MainNav currentPage={currentPage} handlePageChange={handlePageChange} />
+                <div id='page-container'>
+                    {renderPage()}
+                </div>
+            </div>
+        </AnimatePresence>
     );
 };

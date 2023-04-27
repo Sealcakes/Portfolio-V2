@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import MixingPotGif from '../../../Assets/3 Amigos Recipes.gif';
 
 const projects = [
     {
@@ -7,8 +8,10 @@ const projects = [
         title: "Mixing Pot",
         subtitle: "Ingredient Based Recipe Search",
         description: "I lead a team towards developing a cooking app that allows the user to input the ingredients they have on hand and receive recipe suggestions.  The application uses a 3rd party API to search a database using only the ingredients that were input to display select recipes back to the user.",
-        gif: 'https://media2.giphy.com/media/d9O5lPyufbSfZzC1pq/giphy.gif',
-        techUsed: ["HTML", "Bulma", "Javascript", "JQuery", "3rd Party APIs"]
+        gif: MixingPotGif,
+        techUsed: ["HTML", "Bulma", "Javascript", "JQuery", "3rd Party APIs"],
+        codeUrl: 'https://github.com/three-amigos-recipes/three-amigos-recipes',
+        websiteUrl: 'https://three-amigos-recipes.github.io/three-amigos-recipes/',
     },
     {
         id: 2,
@@ -53,23 +56,17 @@ export default function ProjectCards() {
             <motion.div
                 key={project.id}
                 className='project-card'
+                id={'card' + project.id}
                 layoutId={project.id}
                 onClick={() => handleProjectCardClick(project.id)}
             >
                 <motion.img className='card-gifs' src={project.gif}/>
-                {/* <motion.h2>{project.title}</motion.h2>
-                <motion.h5>{project.subtitle}</motion.h5> */}
             </motion.div>
         ));
 
     const renderSelectedProjectCard = () => {
         const selectedProject = projects.find((project) => project.id === cardId);
 
-        const renderTechTags = () => {
-            selectedProject.techUsed.map((tech) => {
-                <motion.div className='tech-tags'>{tech}</motion.div>
-            })
-        }
 
         return (
             <motion.div
@@ -92,8 +89,8 @@ export default function ProjectCards() {
                     </motion.div>
                     <motion.p>{selectedProject.description}</motion.p>
                     <motion.div className='btn-container'>
-                        <motion.a className='view-btn' src='#'>View Page</motion.a>
-                        <motion.a className='view-btn' src='#'>View Code</motion.a>
+                        <motion.a className='view-btn' src={selectedProject.websiteUrl}>View Page</motion.a>
+                        <motion.a className='view-btn' src={selectedProject.codeUrl}>View Code</motion.a>
                     </motion.div>
                     
                 </motion.div>

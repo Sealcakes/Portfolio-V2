@@ -5,6 +5,9 @@
     padding: 0;
 }
 
+/* Portfolio Container */
+
+
 /* Landing Page CSS */
 
 #landing-nav {
@@ -118,13 +121,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 250px;
     width: 450px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     margin: 20px;
-    cursor: pointer;
+    cursor: pointer;    
 }
   
 .project-card:hover {
@@ -221,7 +224,33 @@
     cursor: pointer;
 }
 
+/* Card Rendering CSS */
+
+/* #card1 {
+    transition-delay: 0.2s;
+}
+
+#card2 {
+    transition-delay: 0.4s;
+}
+
+#card3 {
+    transition-delay: 0.6s;
+}
+
+#card4 {
+    transition-delay: 0.8s;
+}
+
+#card5 {
+    transition-delay: 1s;
+} */
+
 /* Portfolio.js CSS */
+
+.portfolio-page-container {
+    opacity: 0.5;
+}
 
 #portfolio-page-header {
     display: flex;
@@ -229,3 +258,6 @@
     margin: 150px 0px 50px 0;
 }
 
+.home-container {
+    
+}
